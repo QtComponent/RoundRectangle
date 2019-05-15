@@ -1,3 +1,10 @@
+/**********************************************************
+Author: 微信公众号(你才小学生)
+WeChat Official Accounts Platform: nicaixiaoxuesheng
+Website: qtbig.com
+Email:  2088201923@qq.com
+QQ交流群: 732271126
+**********************************************************/
 import QtQuick 2.0
 
 Rectangle {
