@@ -1,9 +1,10 @@
 ﻿/**********************************************************
-Author: 微信公众号(你才小学生)
-WeChat Official Accounts Platform: nicaixiaoxuesheng
-Website: qtbig.com
+Author: Qtbig哥
+WeChat Official Accounts Platform: nicaixiaoxuesheng (文章首发)
+Website: qtbig.com(后续更新)
 Email:  2088201923@qq.com
 QQ交流群: 732271126
+LISCENSE: MIT
 **********************************************************/
 import QtQuick 2.0
 
