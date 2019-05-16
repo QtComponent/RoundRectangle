@@ -1,4 +1,4 @@
-/**********************************************************
+﻿/**********************************************************
 Author: 微信公众号(你才小学生)
 WeChat Official Accounts Platform: nicaixiaoxuesheng
 Website: qtbig.com
@@ -10,20 +10,26 @@ import QtQuick 2.0
 Rectangle {
     width: 640; height: 480
 
-    /*
-         ***********
-        *          *
-       *           *
-       *           *
-       *           *
-       *           *
-        *          *
-         ***********
-    */
+
 
     Rectangle {
         id: root
-        property int radiusCorners: Qt.AlignLeft | Qt.AlignTop | Qt.AlignBottom  // Qt.AlignLeft | Qt.AlignRight | Qt.AlignTop | Qt.AlignBottom
+        property int radiusCorners: Qt.AlignLeft | Qt.AlignRight | Qt.AlignTop | Qt.AlignBottom
+        /*
+               Qt.AlignLeft |        Qt.AlignLeft |    Qt.AlignRight |       Qt.AlignLeft |    Qt.AlignLeft |
+               Qt.AlignRight |       Qt.AlignTop |     Qt.AlignTop |         Qt.AlignRight |   Qt.AlignRight |
+               Qt.AlignTop |         Qt.AlignBottom    Qt.AlignBottom        Qt.AlignTop       Qt.AlignBottom
+               Qt.AlignBottom
+               *****************     ***************   ***************       *************     *****************
+               *               *    *              *   *              * 	*             *    *               *
+               *               *   *               *   *               *   *               *   *               *
+               *               *   *               *   *               *   *               *   *               *
+               *               *   *               *   *               *   *               *   *               *
+               *               *   *               *   *               *   *               *   *               *
+               *               *   *               *   *               *   *               *   *               *
+               *               *    *              *   *              *    *               *    *             *
+               *****************     ***************   ***************     *****************	 *************
+        */
 
         anchors.centerIn: parent
         width: 100; height: 100
@@ -31,18 +37,35 @@ Rectangle {
         color: "lightblue"
 
         Repeater {
-            model: [
-                internal.aligns(Qt.AlignLeft | Qt.AlignTop),
-                internal.aligns(Qt.AlignRight | Qt.AlignTop),
-                internal.aligns(Qt.AlignLeft | Qt.AlignBottom),
-                internal.aligns(Qt.AlignRight | Qt.AlignBottom)
-            ]
+            model: [ {
+                        x: 0,
+                        y: 0,
+                        visible: internal.aligns(Qt.AlignLeft | Qt.AlignTop),
+                        radius: root.radius
+                     },
+                     {
+                        x: root.width - root.radius,
+                        y: 0,
+                        visible: internal.aligns(Qt.AlignRight | Qt.AlignTop),
+                        radius: root.radius
+                     },
+                     {
+                        x: 0,
+                        y: root.height - root.radius,
+                        visible: internal.aligns(Qt.AlignLeft | Qt.AlignBottom),
+                        radius: root.radius
+                     },
+                     {
+                        x: root.width - root.radius,
+                        y: root.height - root.radius,
+                        visible: internal.aligns(Qt.AlignRight | Qt.AlignBottom),
+                        radius: root.radius
+                     } ]
 
             Rectangle {
-                x: internal.xPosion(index); y: internal.yPosion(index)
-                width: parent.radius
-                height: width
-                visible: !modelData
+                x: modelData.x; y: modelData.y
+                width: modelData.radius; height: width
+                visible: !modelData.visible
                 color: parent.color
             }
         }
@@ -52,40 +75,6 @@ Rectangle {
 
             function aligns(direction) {
                 return (root.radiusCorners & direction) === direction
-            }
-
-            function xPosion(index) {
-                switch (index) {
-                case 0: {
-                    return 0
-                }
-                case 1: {
-                    return root.width - root.radius
-                }
-                case 2: {
-                    return 0
-                }
-                case 3: {
-                    return root.width - root.radius
-                }
-                }
-            }
-
-            function yPosion(index) {
-                switch (index) {
-                case 0: {
-                    return 0
-                }
-                case 1: {
-                    return 0
-                }
-                case 2: {
-                    return root.height - root.radius
-                }
-                case 3: {
-                    return root.width - root.radius
-                }
-                }
             }
         }
     }
