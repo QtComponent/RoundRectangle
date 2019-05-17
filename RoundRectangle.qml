@@ -14,17 +14,17 @@ Rectangle {
     /*
                             Qt.AlignLeft |      Qt.AlignLeft |      Qt.AlignRight |     Qt.AlignLeft |      Qt.AlignLeft |
                             Qt.AlignRight |     Qt.AlignTop |       Qt.AlignTop |       Qt.AlignRight |     Qt.AlignRight |
-              None:0	    Qt.AlignTop |       Qt.AlignBottom      Qt.AlignBottom      Qt.AlignTop         Qt.AlignBottom
+              None:0        Qt.AlignTop |       Qt.AlignBottom      Qt.AlignBottom      Qt.AlignTop         Qt.AlignBottom
                             Qt.AlignBottom
         *****************     *************       ***************   ***************       *************     *****************
-        *				*    *             *     *              *   *              * 	 *             *    *               *
-        *				*   *               *   *               *   *               *   *               *   *               *
-        *				*   *               *   *               *   *               *   *               *   *               *
-        *				*   *               *   *               *   *               *   *               *   *               *
-        *				*   *               *   *               *   *               *   *               *   *               *
-        *				*   *               *   *               *   *               *   *               *   *               *
+        *               *    *             *     *              *   *              *     *             *    *               *
+        *               *   *               *   *               *   *               *   *               *   *               *
+        *               *   *               *   *               *   *               *   *               *   *               *
+        *               *   *               *   *               *   *               *   *               *   *               *
+        *               *   *               *   *               *   *               *   *               *   *               *
+        *               *   *               *   *               *   *               *   *               *   *               *
         *               *    *             *     *              *   *              *    *               *    *             *
-        *****************     *************       ***************   ***************     *****************	  *************
+        *****************     *************       ***************   ***************     *****************     *************
     */
 
     Repeater {
