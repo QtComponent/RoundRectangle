@@ -1,16 +1,55 @@
-﻿/**********************************************************
-Author: Qtbig哥
-微信公众号: Qt君(首发)
-Website: qtbig.com(后续更新)
-Email:  2088201923@qq.com
-QQ交流群: 732271126
-LISCENSE: MIT
-**********************************************************/
+﻿/**
+ * Author: Qt君
+ * WebSite: qthub.com
+ * Email: 2088201923@qq.com
+ * QQ交流群: 732271126
+ * 关于更多: 扫码关注微信公众号: [Qt君] 第一时间获取最新推送.
+ * ██████████████    ██      ██████████████    ██████████████
+ * ██          ██  ████  ████    ██  ██        ██          ██
+ * ██  ██████  ██    ██████              ██    ██  ██████  ██
+ * ██  ██████  ██  ████  ██    ████████    ██  ██  ██████  ██
+ * ██  ██████  ██      ██  ██      ██    ████  ██  ██████  ██
+ * ██          ██  ██  ██      ████    ██  ██  ██          ██
+ * ██████████████  ██  ██  ██  ██  ██  ██  ██  ██████████████
+ *                         ██  ██████  ██████
+ * ██████████  ██████████  ██  ████████████  ██  ██  ██  ██
+ *       ██        ████        ██  ██    ██  ████████      ██
+ *   ██  ██  ████  ████  ████████████  ██  ██  ██████
+ *     ██████        ██████        ██  ██  ██████        ██
+ *       ██████████  ██  ██  ██  ██  ██  ██  ██      ████
+ *                 ██  ██  ██████  ████  ████████████  ██  ██
+ * ████  ██████████    ██        ████  ██  ██  ██  ██  ██
+ * ████    ████      ████  ██  ██████  ██████████        ██
+ *   ██  ████  ██    ████  ██████    ██  ██      ██    ██
+ * ████████      ██  ██      ████  ██    ████  ██████████  ██
+ * ██    ████  ████  ██  ████    ████      ████  ████████
+ * ██  ████  ██  ██      ██      ████    ██              ██
+ * ██  ██████  ████    ████  ██████████    ██████████  ██████
+ *                 ████    ████  ████  ██  ██      ██████████
+ * ██████████████  ████        ██████    ████  ██  ██████
+ * ██          ██    ████  ██  ██████  ██████      ████    ██
+ * ██  ██████  ██  ████    ████  ██  ██    ██████████████████
+ * ██  ██████  ██  ████        ██████████  ██        ██  ████
+ * ██  ██████  ██  ██  ██████    ██  ████████  ████████████
+ * ██          ██  ██    ██    ████    ██  ████  ██████  ██
+ * ██████████████  ██████████      ██            ████  ██
+ */
 import QtQuick 2.0
 
 Rectangle {
     id: root
-    property int radiusCorners: Qt.AlignLeft | Qt.AlignRight | Qt.AlignTop | Qt.AlignBottom /* Default: */
+    implicitWidth: 50
+    implicitHeight: 50
+
+    radius: 5 // note: you need to set it up.
+
+    //property int radiusCorners: Qt.AlignLeft | Qt.AlignRight | Qt.AlignTop | Qt.AlignBottom /* Default: */
+    property variant radiusCorners: [
+        Qt.AlignLeft | Qt.AlignTop,
+        Qt.AlignLeft | Qt.AlignBottom,
+        Qt.AlignRight | Qt.AlignTop,
+        Qt.AlignRight | Qt.AlignBottom,
+    ]
     /*
                             Qt.AlignLeft |      Qt.AlignLeft |      Qt.AlignRight |     Qt.AlignLeft |      Qt.AlignLeft |
                             Qt.AlignRight |     Qt.AlignTop |       Qt.AlignTop |       Qt.AlignRight |     Qt.AlignRight |
@@ -28,7 +67,8 @@ Rectangle {
     */
 
     Repeater {
-        model: [ {
+        model: [
+            {
                 x: 0,
                 y: 0,
                 visible: internal.aligns(Qt.AlignLeft | Qt.AlignTop),
@@ -51,7 +91,8 @@ Rectangle {
                 y: root.height - root.radius,
                 visible: internal.aligns(Qt.AlignRight | Qt.AlignBottom),
                 radius: root.radius
-            } ]
+            }
+        ]
 
         Rectangle {
             x: modelData.x; y: modelData.y
@@ -65,7 +106,17 @@ Rectangle {
         id: internal
 
         function aligns(direction) {
-            return (root.radiusCorners & direction) === direction
+            if (Array.isArray(root.radiusCorners)) {
+                for (var i = 0; i < root.radiusCorners.length; i++) {
+                    if ((root.radiusCorners[i] & direction) === direction)
+                        return true
+                }
+
+                return false;
+            }
+            else {
+                return (root.radiusCorners & direction) === direction
+            }
         }
     }
 }
