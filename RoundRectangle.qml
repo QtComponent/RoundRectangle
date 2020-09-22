@@ -43,8 +43,8 @@ Rectangle {
 
     radius: 5 // note: you need to set it up.
 
-    //property int radiusCorners: Qt.AlignLeft | Qt.AlignRight | Qt.AlignTop | Qt.AlignBottom /* Default: */
-    property variant radiusCorners: [
+    //property int corners: Qt.AlignLeft | Qt.AlignRight | Qt.AlignTop | Qt.AlignBottom /* Default: */
+    property variant corners: [
         Qt.AlignLeft | Qt.AlignTop,
         Qt.AlignLeft | Qt.AlignBottom,
         Qt.AlignRight | Qt.AlignTop,
@@ -106,16 +106,16 @@ Rectangle {
         id: internal
 
         function aligns(direction) {
-            if (Array.isArray(root.radiusCorners)) {
-                for (var i = 0; i < root.radiusCorners.length; i++) {
-                    if ((root.radiusCorners[i] & direction) === direction)
+            if (Array.isArray(root.corners)) {
+                for (var i = 0; i < root.corners.length; i++) {
+                    if ((root.corners[i] & direction) === direction)
                         return true
                 }
 
                 return false;
             }
             else {
-                return (root.radiusCorners & direction) === direction
+                return (root.corners & direction) === direction
             }
         }
     }

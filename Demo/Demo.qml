@@ -31,7 +31,7 @@ Rectangle {
             width: roundRectangleWidth; height: roundRectangleHeight
             color: "#0984e3"
             radius: roundRectangleRadius
-            radiusCorners: 0
+            corners: 0
         }
 
         /* 四角 圆角 */
@@ -39,7 +39,7 @@ Rectangle {
             width: roundRectangleWidth; height: roundRectangleHeight
             color: "#0984e3"
             radius: roundRectangleRadius
-            radiusCorners: Qt.AlignLeft | Qt.AlignRight | Qt.AlignTop | Qt.AlignBottom
+            corners: Qt.AlignLeft | Qt.AlignRight | Qt.AlignTop | Qt.AlignBottom
         }
 
         /* 左上,右上 圆角 */
@@ -47,7 +47,7 @@ Rectangle {
             width: roundRectangleWidth; height: roundRectangleHeight
             color: "#e17055"
             radius: roundRectangleRadius
-            radiusCorners: Qt.AlignLeft | Qt.AlignRight | Qt.AlignTop
+            corners: Qt.AlignLeft | Qt.AlignRight | Qt.AlignTop
         }
 
         /* 左上,左下 圆角 */
@@ -55,7 +55,7 @@ Rectangle {
             width: roundRectangleWidth; height: roundRectangleHeight
             color: "#00cec9"
             radius: roundRectangleRadius
-            radiusCorners:  Qt.AlignLeft | Qt.AlignTop | Qt.AlignBottom
+            corners:  Qt.AlignLeft | Qt.AlignTop | Qt.AlignBottom
         }
 
         /* 右上,右下 圆角 */
@@ -63,7 +63,7 @@ Rectangle {
             width: roundRectangleWidth; height: roundRectangleHeight
             color: "#00cec9"
             radius: roundRectangleRadius
-            radiusCorners:  Qt.AlignRight | Qt.AlignTop | Qt.AlignBottom
+            corners:  Qt.AlignRight | Qt.AlignTop | Qt.AlignBottom
         }
 
         /* 左下,右下 圆角 */
@@ -71,7 +71,7 @@ Rectangle {
             width: roundRectangleWidth; height: roundRectangleHeight
             color: "#e17055"
             radius: roundRectangleRadius
-            radiusCorners: Qt.AlignLeft | Qt.AlignRight | Qt.AlignBottom
+            corners: Qt.AlignLeft | Qt.AlignRight | Qt.AlignBottom
         }
 
         /**
@@ -84,7 +84,7 @@ Rectangle {
             width: roundRectangleWidth; height: roundRectangleHeight
             color: "#27ae60"
             radius: roundRectangleRadius
-            radiusCorners: [
+            corners: [
                 Qt.AlignLeft | Qt.AlignTop
             ]
         }
@@ -94,7 +94,7 @@ Rectangle {
             width: roundRectangleWidth; height: roundRectangleHeight
             color: "#9b59b6"
             radius: roundRectangleRadius
-            radiusCorners: [
+            corners: [
                 Qt.AlignLeft | Qt.AlignBottom
             ]
         }
@@ -103,7 +103,7 @@ Rectangle {
             width: roundRectangleWidth; height: roundRectangleHeight
             color: "#f1c40f"
             radius: roundRectangleRadius
-            radiusCorners: [
+            corners: [
                 Qt.AlignRight | Qt.AlignTop
             ]
         }
@@ -113,7 +113,7 @@ Rectangle {
             width: roundRectangleWidth; height: roundRectangleHeight
             color: "#34495e"
             radius: roundRectangleRadius
-            radiusCorners: [
+            corners: [
                 Qt.AlignRight | Qt.AlignBottom
             ]
         }
@@ -123,7 +123,7 @@ Rectangle {
             width: roundRectangleWidth; height: roundRectangleHeight
             color: "#27ae60"
             radius: roundRectangleRadius
-            radiusCorners: [
+            corners: [
                 Qt.AlignLeft | Qt.AlignTop,
                 Qt.AlignRight | Qt.AlignTop,
                 Qt.AlignLeft | Qt.AlignBottom
@@ -135,7 +135,7 @@ Rectangle {
             width: roundRectangleWidth; height: roundRectangleHeight
             color: "#9b59b6"
             radius: roundRectangleRadius
-            radiusCorners: [
+            corners: [
                 Qt.AlignLeft | Qt.AlignTop,
                 Qt.AlignRight | Qt.AlignTop,
                 Qt.AlignRight | Qt.AlignBottom
@@ -146,7 +146,7 @@ Rectangle {
             width: roundRectangleWidth; height: roundRectangleHeight
             color: "#f1c40f"
             radius: roundRectangleRadius
-            radiusCorners: [
+            corners: [
                 Qt.AlignLeft | Qt.AlignBottom,
                 Qt.AlignRight | Qt.AlignTop,
                 Qt.AlignRight | Qt.AlignBottom
@@ -158,7 +158,7 @@ Rectangle {
             width: roundRectangleWidth; height: roundRectangleHeight
             color: "#34495e"
             radius: roundRectangleRadius
-            radiusCorners: [
+            corners: [
                 Qt.AlignLeft | Qt.AlignTop,
                 Qt.AlignLeft | Qt.AlignBottom,
                 Qt.AlignRight | Qt.AlignBottom
